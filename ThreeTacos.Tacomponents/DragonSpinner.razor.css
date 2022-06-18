@@ -1,0 +1,12 @@
+﻿.dragonspinner {
+    width: 191px;
+    height: 163px;
+    margin: 2em auto;
+    background: transparent url('./images/flyingdragon.png') 0 0 no-repeat;
+    animation: playX 750ms steps(3) infinite;
+}
+
+@keyframes playX {
+    from {background-position-x: 0px;}
+    to {background-position-x: -573px;}
+}
