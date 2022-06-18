@@ -9,13 +9,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-      
+      - uses: actions/checkout@v3      
       - name: Setup dotnet
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 6.0.x
       - run: dotnet build ThreeTacos.Tacomponents/ThreeTacos.Tacomponents.csproj -c Release
-      - run: dotnet nuget push ThreeTacos.Tacomponents/bin/Release/ThreeTacos.Tacomponents.*.nupkg --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
+      - run: dotnet nuget push ThreeTacos.Tacomponents/bin/Release/ThreeTacos.Tacomponents.*.nupkg --api-key ${{ secrets.NUGET_KEY }}
