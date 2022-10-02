@@ -20,7 +20,12 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="BlazorComponentUtilities" Version="1.8.0" />
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Navigation\Tabularity\TabbardItem.razor" />
     </ItemGroup>
 
 </Project>

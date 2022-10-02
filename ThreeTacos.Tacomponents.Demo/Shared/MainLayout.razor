@@ -1,0 +1,56 @@
+﻿@inherits LayoutComponentBase
+
+<style>
+    .item-style {    
+        background-color: blue;
+        color: #fff;
+        border-top: 5px solid #3a5647;
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+    
+    .slider {
+        width: 100%;
+    }
+</style>
+
+<div>
+    @Body
+    <div class="slider">
+        <input type="range" min="1" max="20" 
+               @bind-value="@_sliderValue"
+               @bind-value:event="oninput"
+               @onchange="UpdateButtonCount" 
+               >
+    </div>
+    <TacoTabPanel CssClasses="item-style">
+        @foreach(var buttonLabel in _buttonLabelList)
+        {
+            <TacoTabPanelItem>
+                <DemoTabButton SomeText="@buttonLabel"></DemoTabButton>
+            </TacoTabPanelItem>
+        }
+    </TacoTabPanel>
+</div>
+
+@code {
+    int _sliderValue = 5;
+    List<string> _buttonLabelList = new List<string>();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        
+        UpdateButtonCount();
+    }
+
+    void UpdateButtonCount()
+    {
+        _buttonLabelList.Clear();
+        
+        for (var i = 1; i < _sliderValue; i++)
+        {
+            _buttonLabelList.Add($"Taco {i}");
+        }
+    }
+}
