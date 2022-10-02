@@ -3,7 +3,8 @@
 name: ghp-deploy
 
 permissions:
-  contents: read
+  contents: write
+  repository-projects: write
   pages: write
   id-token: write
 
