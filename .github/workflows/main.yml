@@ -24,3 +24,30 @@ jobs:
         run: dotnet nuget push ThreeTacos.Tacomponents/bin/Release/ThreeTacos.Tacomponents.*.nupkg -k $API_KEY -s https://api.nuget.org/v3/index.json
         env:
           API_KEY: ${{ secrets.NUGET_KEY }}
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 6.0.x
+          
+      - name: Publish app
+        run: dotnet publish -c Release
+
+      - name: Rewrite base href
+        uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
+        with:
+          html_path: bin/Release/net6.0/publish/wwwroot/index.html
+          base_href: /tacomponents/
+
+      - name: GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v1.5.1
+        with:
+          target_branch: gh-pages
+          build_dir: bin/Release/net6.0/publish/wwwroot/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
