@@ -40,7 +40,7 @@ jobs:
       - name: Rewrite base href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
         with:
-          html_path: bin/Release/net6.0/publish/wwwroot/index.html
+          html_path: ThreeTacos.Tacomponents.Demo/bin/Release/net6.0/publish/wwwroot/index.html
           base_href: /tacomponents/
 
       - name: GitHub Pages
