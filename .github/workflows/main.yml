@@ -1,5 +1,9 @@
 name: Packaging
 
+permissions:
+  contents: write
+  repository-projects: write
+
 on:
   push:
     branches: [ "main" ]
