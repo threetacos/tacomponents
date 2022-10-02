@@ -35,7 +35,7 @@ jobs:
           dotnet-version: 6.0.x
           
       - name: Publish app
-        run: dotnet publish -c Release
+        run: dotnet publish ThreeTacos.Tacomponents.Demo/ThreeTacos.Tacomponents.Demo.csproj -c Release
 
       - name: Rewrite base href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
