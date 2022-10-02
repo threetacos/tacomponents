@@ -3,6 +3,8 @@ name: Packaging
 permissions:
   contents: write
   repository-projects: write
+  pages: write
+  id-token: write
 
 on:
   push:
