@@ -1,0 +1,46 @@
+/* _content/ThreeTacos.Tacomponents/Components/Progress/DragonSpinner.razor.rz.scp.css */
+.dragon-loader[b-ls42pw1ong] {
+    width: 191px;
+    height: 163px;
+    margin: 2em auto;
+    background: transparent url('./images/flyingdragon.png') 0 0 no-repeat;
+    animation: playX-b-ls42pw1ong 750ms steps(3) infinite;
+}
+
+@keyframes playX-b-ls42pw1ong {
+    from {background-position-x: 0px;}
+    to {background-position-x: -573px;}
+}
+/* _content/ThreeTacos.Tacomponents/TacoTabs/TacoTabPanel.razor.rz.scp.css */
+.flex-container-col[b-rjehuxang3] {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: center;
+    align-content: stretch;
+}
+
+.tacotab-container[b-rjehuxang3] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    height: auto;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+}
+/* _content/ThreeTacos.Tacomponents/TacoTabs/TacoTabPanelItem.razor.rz.scp.css */
+.tacotab-item[b-7ij3dvxon5] {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    padding-top: 5px;
+}
